@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bmi calculator</title>
+	<script>
+	  function showBMI(){
+	    let height=document.getElementById("height").value;
+		let weight=document.getElementById("weight").value;
+		let bmiResult=weight/(height**2);
+		
+		let str="";
+		if(bmiResult>24){
+		  str="過重";
+		}
+		else if(bmiResult>18.5){
+		  str="正常";
+		} 
+		else{
+		  str="過輕";
+		}
+		document.getElementById("bmi").innerText+=bmiResult;
+		document.getElementById("standard").innerText+=str;
+	  }
+	</script>
+</head>
+<body>
+    <h1>
+	<table>
+	  <tr>
+	    <td>
+		  <label>身高(公尺):</label>
+		</td>
+	    <td>
+		  <input type="text" id="height">
+		</td>
+	  </tr>
+	  <tr>
+	    <td>
+		  <label>體重(公斤):</label>
+		</td>
+	    <td>
+		  <input type="text" id="weight">
+		</td>
+	  </tr>
+	  <tr>
+	    <td>
+		  <input type="submit" id="calbmi" onclick="showBMI()">
+		</td>
+	  </tr>
+	</table>
+	<p id="bmi">你的BMI值為</p>
+	<p id="standard">你的體重為</p>
+</body>
+</html>

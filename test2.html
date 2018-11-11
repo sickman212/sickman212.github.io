@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>DropMenu | Vixual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="test2css.css">
+<script type="text/javascript">
+
+var VisibleMenu = '';	// 記錄目前顯示的子選單的 ID
+
+// 顯示或隱藏子選單
+function switchMenu( theMainMenu, theSubMenu, theEvent ){
+	var SubMenu = document.getElementById( theSubMenu );
+	if( SubMenu.style.display == 'none' ){	// 顯示子選單
+		SubMenu.style.minWidth = theMainMenu.clientWidth;	// 讓子選單的最小寬度與主選單相同 (僅為了美觀)
+		SubMenu.style.display = 'block';
+		hideMenu();	// 隱藏子選單
+		VisibleMenu = theSubMenu;
+	}
+	else{	// 隱藏子選單
+		if( theEvent != 'MouseOver' || VisibleMenu != theSubMenu ){
+			SubMenu.style.display = 'none';
+			VisibleMenu = '';
+		}
+	}
+}
+
+// 隱藏子選單
+function hideMenu(){
+	if( VisibleMenu != '' ){
+		document.getElementById( VisibleMenu ).style.display = 'none';
+	}
+	VisibleMenu = '';
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div align="center" style="background:#666666">
+
+	<!--選單1(Hover)-->
+	<span class="main-menu" onmouseover="switchMenu( this, 'SubMenu1', 'MouseOver' )" onmouseout="hideMenu()">Menu1(Hover) <span style="font-size:9px;">&#9660;</span>
+		<ul id="SubMenu1" class="sub-menu" style="display:none;">
+			<li><a href="http://www.vixual.net/" target="_blank">Vixual</a></li>
+			<li><a href="http://www.google.com.tw/" target="_blank">Google</a></li>
+			<li><a href="http://tw.yahoo.com/" target="_blank">Yahoo!奇摩</a></li>
+		</ul>
+	</span>
+
+	<!--選單2(Click)-->
+	<span class="main-menu" onclick="switchMenu( this, 'SubMenu2' )">Menu2(Click) <span style="font-size:9px;">&#9660;</span>
+		<ul id="SubMenu2" class="sub-menu" style="display:none;">
+			<li><a href="http://www.vixual.net/" target="_blank">Vixual</a></li>
+			<li><a href="http://www.google.com.tw/" target="_blank">Google</a></li>
+			<li><a href="http://tw.yahoo.com/" target="_blank">Yahoo!奇摩</a></li>
+		</ul>
+	</span>
+
+	<!--選單3(Hover+Click)-->
+	<span class="main-menu" onmouseover="switchMenu( this, 'SubMenu3' )" onmouseout="hideMenu()" onclick="switchMenu( this, 'SubMenu3' )">Menu3(Both) <span style="font-size:9px;">&#9660;</span>
+		<ul id="SubMenu3" class="sub-menu" style="display:none;">
+			<li><a href="http://www.vixual.net/" target="_blank">Vixual</a></li>
+			<li><a href="http://www.google.com.tw/" target="_blank">Google</a></li>
+			<li><a href="http://tw.yahoo.com/" target="_blank">Yahoo!奇摩</a></li>
+		</ul>
+	</span>
+
+</div>
+
+</body>
+
+</html>

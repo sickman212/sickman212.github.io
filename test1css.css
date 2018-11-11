@@ -1,0 +1,41 @@
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+<style>
+	.main-menu	{	color:#FFFFFF; background-color:#666666; padding:5px; margin:0px; cursor:pointer; display:inline-block; 	}	/* 主選單的樣式 */
+	.main-menu:hover {	background-color:#0000FF; 	}
+	.sub-menu	{	color:#0000FF; background-color:#CCCCCC; margin:5px -5px; padding:0px; list-style-type:none; position:absolute; 	} /* 下拉清單的樣式 */
+	.sub-menu li	{ padding: 3px 5px; text-align:left; } /* 下拉清單每一列的樣式 */
+	.sub-menu li:hover	{	color:#FFFFFF; background-color:#0000FF; 	}
+	.sub-menu a	{	text-align:left; display:block; text-decoration:none; color:#0000FF; 	}
+	.sub-menu a:hover	{	color:#FFFFFF; background-color:#0000FF; text-decoration:none; 	}
+</style>
+

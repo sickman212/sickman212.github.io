@@ -1,0 +1,68 @@
+body{
+background-image:url('http://www.rumtoast.com/wp-content/uploads/2016/01/LINE%E7%B6%A0%E8%89%B2%E8%83%8C%E6%99%AF%E5%9C%96.jpg');
+background-attachment:fixed;
+}
+p{
+  color:blue;
+}
+h1{
+  color:red;
+  text-align: center;
+}
+h2{
+  color:green;
+}
+.content{
+	background-color: rgba(255, 255, 255, 0.5);
+    font-family: Microsoft JhengHei, serif;
+	margin:60px;
+}
+.slideshow-container{
+	width: 60%;
+	height: 100px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+.slideshowul{
+	width: 80%;
+	list-style-type: none;
+	display: inline-block;
+	margin: 0px;
+	text-align:center;
+	margin-top: 45px;
+	padding: 0px;
+}
+.spot{
+	width: 13px;
+	height: 13px;
+	margin-top: 45px;
+	border-radius: 100%;
+	background-color: gray;
+	display: inline-block;
+	cursor: pointer;
+}
+.spot:hover{  
+  background-color: black;
+}
+
+.spot.prev{
+  float: left;
+}
+
+.spot.next{
+  float: right;
+}
+@media(max-width: 800px){
+  .content{
+    margin: 20px 15px 20px 15px;
+  }
+
+  .slideshow-container{
+    width: 90%; 
+  }
+
+  p{
+    font-size: 18px;
+  }
+}

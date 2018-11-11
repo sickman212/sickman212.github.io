@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>$(document).ready(function(){
+	  $(".quotes").hide();
+	  $(".quotes:nth-child(1)").fadeIn("slow");
+	  let current = 1;
+	  let max = $(".slideshowul li").length;
+	  startChange();  
+	  function prev(){  
+        $(".quotes").hide();
+        current -= 1; 
+
+        if(current == 0){ 
+            current = max;
+        }
+        $(".quotes:nth-child(" + current + ")").fadeIn("slow");
+      }
+	   function next(){    
+        $(".quotes").hide();
+        current += 1;
+
+        if(current > max){
+            current = 1;
+        }
+        $(".quotes:nth-child(" + current + ")").fadeIn("slow");
+      }
+	   function startChange(){
+        changeIt = setInterval(function(){next();}, 4000);
+      }
+	   function stopChange(){
+        clearInterval(changeIt);
+      }
+	   $(".spot.prev").click(function(){
+        stopChange();  
+        prev();  
+        startChange();
+      });
+       $(".spot.next").click(function(){
+        stopChange();
+        next();
+        startChange();
+      });
+	}); </script>
+	<title>sick man's Page</title>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+    <div class="content">
+    <h1>病人的個人網站</h1>
+	<div class="slideshow-container">
+    <div class="spot prev"></div>
+    <ul class="slideshowul">
+      <li class="quotes">太陽騎士正義三套件</li>
+      <li class="quotes">正義的背刺</li>
+      <li class="quotes">正義的毒飛刀</li>
+      <li class="quotes">正義的毒箭</li>
+    </ul>
+    <div class="spot next"></div>
+    </div>
+	<h2>我的大頭貼</h2>
+	<img src="https://novel-cdn.kuangxiangit.com/uploads/allimg/c170118/18-01-17213509-97110-100025687.jpg">
+	<h2>我是誰?</h2>
+	<p>病人<br>圖資系<br>輔大<br></p> 
+	<h2>我的專長</h2>
+	<ol>
+	      <li>吃飯</li>
+		  <li>睡覺</li>
+		  <li>打game</li>
+	</ol>
+	<h2>我的興趣</h2>
+	<ul>
+	      <li>小說</li>
+		  <li>追番</li>
+		  <li>game</li>
+	</ul>
+	<a href="http://web.lins.fju.edu.tw/chi/">輔大圖資系網</a>
+	</div>
+	</body>
+</html>
